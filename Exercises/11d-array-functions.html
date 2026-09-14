@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11d</title>
+</head>
+<body>
+
+
+  <script>
+
+    /*
+    
+    for(let i=0;i<=10;i+=2){
+
+       console.log(i);
+
+    }
+
+    for(let i=5;i>=0;i--){
+
+      console.log(i);
+
+    }
+      */
+
+      /*
+
+      let i=0;
+
+      while(i<=10){
+        console.log(i);
+        i=+2;
+      }
+
+      i=5;
+      while(i>=0){
+        console.log(i);
+        i--;
+      }
+        */
+
+        
+        function addOne(array){
+          let array2=[];
+
+          for(let i=0;i<array.length;i++){
+          array2[i]=array[i]+1;
+        }
+
+        return array2
+
+        }
+        console.log(addOne([1,2,3]));
+        console.log(addOne([-2,-1,0,99])) ;
+
+        function addNum(array,num){
+          let result =[];
+          for(let i=0;i<array.length;i++){
+            result[i]=array[i]+num;
+          }
+          return result;
+        }
+
+        console.log(addNum([1,2,3],2));
+
+
+        function addArrays(array1,array2){
+          let result=[];
+          if(array1.length<array2.length){
+
+            let i=0;
+            while(i<array1.length){
+              result[i]=array1[i]+array2[i];
+              i++;
+            }
+
+            for(let j=i;j<array2.length;j++){
+              result[j]=array2[j]
+            }
+           
+          }else{
+            let i=0;
+            while(i<array2.length){
+              result[i]=array1[i]+array2[i];
+              i++;
+            }
+
+            for(let j=i;j<array1.length;j++){
+              result[j]=array1[j]
+            }
+          }
+
+          return result;
+        }
+
+        function countPositive(array){
+          let count=0;
+          for(let i=0;i<array.length;i++){
+            if(array[i]>0){
+              count=count+1;
+            }
+          }
+          return count;
+        }
+
+       function minArray(nums){
+        let min=0;
+        for(let i=0;i<nums.length;i++){
+          if(min>nums[i]){
+            min=nums[i];
+          }
+        }
+        return min;
+       }
+
+       function maxArray(nums){
+        let max=0;
+        for(let i=0;i<nums.length;i++){
+          if(max<nums[i]){
+            max=nums[i];
+          }
+        }
+        return max;
+       }
+
+       function minMax(nums){
+
+        let result={
+          min:0,
+          max:0,
+        };
+
+        if(nums.length===0){
+          result.max=null;
+          result.min=null;
+        }else if(nums.length===1){
+          result.max=nums[0];
+          result.min=nums[0];
+        }else{
+
+          result.max= maxArray(nums);
+         result.min=minArray(nums);
+
+        }
+
+        return result;
+       }
+
+      function countWords(words){
+        let result={};
+
+        for(let i=0;i<words.length;i++){
+          const word = words[i];
+
+          if(!result[word]){
+            result[word]=1;
+          }else {
+            result[word]++;
+          }
+        }
+        return result;
+      }
+
+      console.log(countWords(['apple', 'grape', 'apple', 'apple']));
+
+ 
+
+  </script>
+  
+</body>
+</html>
