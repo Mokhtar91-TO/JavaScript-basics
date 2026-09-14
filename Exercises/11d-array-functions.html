@@ -165,6 +165,125 @@
 
       console.log(countWords(['apple', 'grape', 'apple', 'apple']));
 
+
+
+      
+
+      function findindex(array,word){
+
+          let i=0;
+          let found = false;
+
+          while(i<array.length){
+            if(array[i]===word){
+              
+              found=true;
+              break;
+            }
+            i++;
+          }
+          if(found===false){
+            return -1;
+          }
+
+      }
+
+      findindex(['green','red','blue','red'],'red');
+
+
+
+      function removeEgg(foods){
+
+        let result=[];
+
+        for(let i=0;i<foods.length;i++){
+            if(foods[i]==='egg'){
+              continue;
+            }
+           
+              result.push(foods[i]);
+                 
+        }
+
+        return result;
+
+      }
+       console.log(removeEgg(['egg','apple','egg','egg','ham']));
+
+        function removeEgg2(foods) {
+        // To remove the last 2 'egg', reverse the array first.
+        const foods2=foods.slice();
+        const reversedFoods = foods.reverse();
+
+        const result = [];
+        let eggsRemoved = 0;
+
+        for (let i = 0; i < reversedFoods.length; i++) {
+          if (reversedFoods[i] === 'egg' && eggsRemoved < 2) {
+            eggsRemoved++;
+            continue;
+          }
+
+          result.push(reversedFoods[i]);
+        }
+
+        // At the end, remember to .reverse() back the result.
+
+        foods=foods2;
+        console.log(foods);
+        
+        return result.reverse();
+      }
+
+      console.log(removeEgg2(['egg', 'apple', 'egg', 'egg', 'ham']));
+
+      let FizzBuzz=[];
+
+      for(let i=1;i<=20;i++){
+        
+       if(i%3===0 && i%5===0){
+  
+        FizzBuzz.push('FizzBuzz');
+        continue;
+       }else{
+        if(i%3===0){
+         
+          FizzBuzz.push('Fizz');
+          continue;
+        }else{
+          if(i%5===0){
+            
+            FizzBuzz.push('Buzz');
+            continue;
+          }
+        }
+       }
+
+       FizzBuzz.push(i);
+       
+      }
+
+      console.log(FizzBuzz);
+
+      
+       function unique(array){
+
+       let result=[];
+
+       for(let i=0;i<array.length;i++){
+        const word = array[i];
+
+        if(findindex(result,word)===-1){
+          result.push(word);
+        }
+       }
+
+       return result;
+       } 
+
+      console.log(unique(['green','red','blue','red']));
+      console.log(unique(['red', 'green', 'green', 'red']));
+
  
 
   </script>

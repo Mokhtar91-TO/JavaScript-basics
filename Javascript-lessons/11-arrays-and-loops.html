@@ -64,6 +64,8 @@
       }
         */
 
+        /*
+
         const nums = [1,1,3];
 
         let total=0;
@@ -79,8 +81,52 @@
           DoubleNums[i]=nums[i]*2;
         }
 
-        console.log(DoubleNums);
+        console.log(DoubleNums);*/
 
+       const array1=[1,2,3];
+       const array2=array1.slice();//create a different coppy in the memory
+       array2.push(4);
+       console.log(array1);
+       console.log(array2);
+
+       const [firstValue,secondValue]=[1,2,3];
+
+       for(let i=1;i<=10;i++){
+        if(i%3===0){
+          continue;//skip if i is divisible by 3
+        }
+        console.log(i);
+        if(i===8){
+          break;
+        }
+       }
+
+     let i=1;
+     while(i<=10){
+      if(i%3===0){
+        i++;
+        continue;
+      }
+      console.log(i);
+      i++;
+     }
+
+
+     function doubleArray(nums){
+      let DoubleNums=[];
+
+    for(let i=0;i<nums.length;i++){
+      if(nums[i]===0){
+        return DoubleNums;
+      }
+      DoubleNums[i]=nums[i]*2;
+    }
+
+     return DoubleNums
+
+     }
+
+     console.log(doubleArray([2,2,5,0,5]))
 
 
     </script>
