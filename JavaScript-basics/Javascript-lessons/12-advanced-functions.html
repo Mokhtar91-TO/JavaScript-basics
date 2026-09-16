@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced Functions</title>
+
+  </head>
+  <body>
+
+   
+
+    <script>
+    
+       /*
+       const function1= function greeting(){
+        console.log("hello");
+       };   
+
+       const object1 = {
+         num:2,
+         fun: function greeting () {
+            console.log('hello2');
+         }
+       }
+
+       function display(param) {
+         console.log(param)
+       };
+       
+       function run(param){
+          param();
+       }
+
+       run(function (){
+        console.log('hello3');
+       }); */
+
+       /*
+
+       setTimeout(function(){
+        console.log('timeout')
+       }, 3000);
+       
+       console.log('next line');
+
+       setInterval(function(){
+        console.log('interval');
+       }, 100000000);*/
+
+       [
+        'make dinner',
+        'wash dishes',
+        'watch youtube'
+       ].forEach(function(value,index){
+
+        if(value==='wash dishes'){
+         return;
+        }
+        console.log(index);
+          console.log(value)
+       })
+
+    </script>
+  </body>
+</html>

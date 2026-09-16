@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Only 1 button can be ON at a time</title>
+
+  <style>
+    .toggle-button {
+        background-color: rgb(230, 230, 230);
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-right: 10px;
+        font-size: 15px;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+
+      .is-toggled {
+        background-color: black;
+        color: white;
+      }
+  </style>
+
+</head>
+<body>
+
+    
+<button class="js-button toggle-button" onclick="toggleOneButton('.js-button')">Gaming</button>
+<button class="js-button2 toggle-button" onclick=" toggleOneButton('.js-button2')">Music</button>
+<button class="js-button3 toggle-button" onclick="toggleOneButton('.js-button3')">Tech</button>
+
+<script >
+  function toggleOneButton(selector){
+    const buttonElement=document.querySelector(selector);
+    
+    if(buttonElement.classList.contains('is-toggled')){
+
+      buttonElement.classList.remove('is-toggled')
+
+    }else{
+      turnOffPreviousButton();
+      buttonElement.classList.add('is-toggled')
+    }
+
+  }
+
+  function turnOffPreviousButton(){
+    const previousButton=document.querySelector('.is-toggled');
+    if(previousButton){
+      previousButton.classList.remove('is-toggled');
+    }
+  }
+</script>
+
+  
+</body>
+</html>
