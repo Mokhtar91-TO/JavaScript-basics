@@ -9,11 +9,13 @@
 
     <button class="js-Add" onclick="
       Add();
+      displayNotification();
       ">
       Add
     </button>
     <button class="js-remove" onclick="
     Remove();
+    displayNotification();
     ">
       Remove
     </button>
@@ -21,25 +23,38 @@
   <script>
 
     let messages = 2;
-    let IntervalId;
-    
-    IntervalId = setInterval(function(){
+    let intervalId;
 
-      if(messages===0){
-        clearInterval(IntervalId);
-         document.title='App';
-      }else{
+    let isDisplayinNotification;
 
+    displayNotification();
+
+    function displayNotification(){
+      if(messages ===0){
+        stopNotification();
+        return;
+      }
+
+      if(isDisplayinNotification){
+        return;
+      }
+
+      isDisplayinNotification=true;
+
+      intervalId = setInterval(function(){
         if(document.title==='App'){
-       document.title=`(${messages}) New messages`
-      }else{
-        document.title='App';
-      }
+          document.title=`(${messages}) New messages`
+        } else {
+          document.title='App'
+        }
+      }, 1000);
+    };
 
-      }
-
-      
-    }, 1000);
+    function stopNotification (){
+      isDisplayinNotification = false;
+      clearInterval(intervalId);
+      document.title='App';
+    }
 
     function Add(){
       messages=messages+1;
@@ -48,8 +63,11 @@
     function Remove(){
       if(messages>0){
          messages=messages-1;
+      } 
+       if(messages===0){
+        stopNotification();
       }
-    }
+    };
    
 
   </script>
