@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12j</title>
+</head>
+<body>
+    
+    <script>
+
+        function countPositive(nums){
+            let positiveNumbers=0;
+
+            nums.forEach((num)=>{
+                if(num>0){
+                    positiveNumbers++;
+                }
+            })
+            return positiveNumbers;
+        }
+
+        console.log(countPositive([1,-3,5]));
+
+        function addNum(array,num){
+           return array.map((value)=> value + num);
+        };
+
+        console.log(addNum([1,2,3],2));
+
+       
+
+        function removeEgg(array){
+             let eggRemoved=0;
+            return array.filter((value)=>{
+                if(eggRemoved<2 && value==='egg'){
+                    eggRemoved++;
+                    return false;
+                }
+                return true;
+            });
+        };
+
+        console.log(removeEgg(['egg','apple','egg','egg','ham']));
+
+        
+
+
+    </script>
+</body>
+</html>

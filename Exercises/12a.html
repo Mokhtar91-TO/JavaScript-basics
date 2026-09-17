@@ -20,7 +20,7 @@
     function finished(){
       const button=document.querySelector('.js-start-button');
       button.innerHTML='Loading...';
-      setTimeout(function(){
+      setTimeout(()=>{
         button.innerHTML='Finished';
       }, 1000) 
     }
