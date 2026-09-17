@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App</title>
+</head>
+<body>
+
+    <button class="js-Add" onclick="
+      Add();
+      ">
+      Add
+    </button>
+    <button class="js-remove" onclick="
+    Remove();
+    ">
+      Remove
+    </button>
+
+  <script>
+
+    let messages = 2;
+    let IntervalId;
+    
+    IntervalId = setInterval(function(){
+
+      if(messages===0){
+        clearInterval(IntervalId);
+         document.title='App';
+      }else{
+
+        if(document.title==='App'){
+       document.title=`(${messages}) New messages`
+      }else{
+        document.title='App';
+      }
+
+      }
+
+      
+    }, 1000);
+
+    function Add(){
+      messages=messages+1;
+    }
+
+    function Remove(){
+      if(messages>0){
+         messages=messages-1;
+      }
+    }
+   
+
+  </script>
+</body>
+</html>
